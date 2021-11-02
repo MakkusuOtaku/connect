@@ -173,7 +173,7 @@ function updateDisplay() {
 
 const nodes = [];
 
-createNode("steins gate", 0, 0);
+createNode("chuunibyo demo koi ga shitai", 0, 0);
 
 setInterval(()=>{
     updateDisplay();
