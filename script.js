@@ -15,32 +15,16 @@ addEventListener('mousewheel', function(e) {
     }
 });
 
-const data = {
-    "isekai-quartet": [
-        "Konosuba",
-        "Re:Zero",
-        "Overlord",
-        "The Saga of Tanya The Evil",
-        "Cautious Hero",
-        "The Rising of The Shield Hero"
-    ],
-    "Re:Zero": [
-        "Konosuba",
-        "Tantei Wa Mou Shinderu",
-    ],
-    "Tantei Wa Mou Shinderu": [
-        "Hololive"
-    ],
-};
-
 async function loadData(name) {
-    let response = await fetch(`data/${name}.json`);
+    let response = await fetch(`data.json`);
+    console.log(name);
 
     // Return empty array if the file doesn't exist
     if (response.status == 404) {
         return null;
     } else {
-        return await response.json();
+        let json = await response.json();
+        return json[name];
     }
 
     //console.log(json);
@@ -48,11 +32,12 @@ async function loadData(name) {
 
 async function createNode(name, x=0, y=0, minDirection=0, maxDirection=Math.PI*2, depth=0, parent, hue=0) {
     let nodeData = await loadData(name);
+    console.log(name, nodeData);
 
     let children = nodeData? nodeData.connected : [];
 
     let node = {
-        name: nodeData? nodeData.display : name,
+        name: nodeData? nodeData.name : name,
         x: x,
         y: y,
         depth: depth,
@@ -159,11 +144,6 @@ function updateDisplay() {
     context.clearRect(-canvas.width/2, -canvas.height/2, canvas.width, canvas.height);
     context.lineWidth = zoom/10;
 
-    for (node of nodes) {
-        //updateNode(node);
-        //drawNode(node);
-    }
-
     updateNode(nodes[0]);
     drawNode(nodes[0]);
 
@@ -173,7 +153,7 @@ function updateDisplay() {
 
 const nodes = [];
 
-createNode("chuunibyo demo koi ga shitai", 0, 0);
+createNode("kaguya-sama", 0, 0);
 
 setInterval(()=>{
     updateDisplay();

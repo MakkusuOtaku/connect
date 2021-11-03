@@ -1,0 +1,130 @@
+{
+    "assassination classroom": {
+        "name": "Assassination Classroom",
+        "connected": [
+            "naruto"
+        ]
+    },
+    "chuunibyo demo koi ga shitai": {
+        "name": "Chuunibyo Demo Koi Ga Shitai",
+        "connected": [
+            "k-on",
+            "melancholy of haruhi suzumiya"
+        ]
+    },
+    "full metal panic": {
+        "name": "Full Metal Panic",
+        "connected": [
+            "death note"
+        ]
+    },
+    "gintama": {
+        "name": "Gintama",
+        "connected": [
+            "dragon ball"
+        ]
+    },
+    "hunter x hunter": {
+        "name": "Hunter x Hunter",
+        "connected": [
+            "parasyte",
+            "sailor moon",
+            "yu yu hakusho"
+        ]
+    },
+    "isekai quartet": {
+        "name": "Isekai Quartet",
+        "connected": [
+            "cautious hero",
+            "konosuba",
+            "overlord",
+            "rezero",
+            "rising of the shield hero",
+            "tanya the evil"
+        ]
+    },
+    "kaguya-sama": {
+        "name": "Kaguya-Sama: Love is war!",
+        "connected": [
+            "umaru-chan"
+        ]
+    },
+    "lucky star": {
+        "name": "Lucky Star",
+        "connected": [
+            "anime tenchou",
+            "cats eye",
+            "detective conan",
+            "dragon ball",
+            "fullmetal alchemist",
+            "full metal panic",
+            "keroro gunso",
+            "kindaichi case files",
+            "melancholy of haruhi suzumiya",
+            "saw",
+            "shuffle"
+        ]
+    },
+    "no game no life": {
+        "name": "No Game No Life",
+        "connected": [
+            "ace attorney",
+            "akibas trip",
+            "castle in the sky",
+            "doraemon",
+            "jojos bizzare adventure",
+            "persona",
+            "steins gate",
+            "yu-gi-oh"
+        ]
+    },
+    "rezero": {
+        "name": "Re:Zero",
+        "connected": [
+            "konosuba",
+            "tantei wa mou shindeiru"
+        ]
+    },
+    "steins gate": {
+        "name": "Steins;Gate",
+        "connected": [
+            "anonymous code",
+            "chaos child",
+            "chaos head",
+            "occultic nine",
+            "robotics notes",
+            "steins ???"
+        ]
+    },
+    "tantei wa mou shindeiru": {
+        "name": "Tantei Wa Mou, Shindeiru",
+        "connected": [
+            "hololive"
+        ]
+    },
+    "umaru-chan": {
+        "name": "Himouto! Umaru-chan",
+        "connected": [
+            "ace attorney",
+            "assassination classroom",
+            "bleach",
+            "disney tsum tsum",
+            "dragon ball",
+            "dragonronpa",
+            "final fantasy",
+            "gintama",
+            "hunter x hunter",
+            "madoka magica",
+            "mario kart",
+            "monster hunter",
+            "naruto",
+            "one piece",
+            "pokemon",
+            "precure",
+            "steins gate",
+            "street fighter",
+            "vocoloid",
+            "yu-gi-oh"
+        ]
+    }
+}
