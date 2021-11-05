@@ -15,24 +15,47 @@ addEventListener('mousewheel', function(e) {
     }
 });
 
-async function loadData(name) {
-    let response = await fetch(`data.json`);
-    console.log(name);
+const camera = {
+    x: 0,
+    y: 0,
+};
 
-    // Return empty array if the file doesn't exist
-    if (response.status == 404) {
-        return null;
-    } else {
-        let json = await response.json();
-        return json[name];
+// Drag camera by clicking and dragging
+
+document.body.style.cursor = "grab";
+
+addEventListener('mousedown', (e)=>{
+    document.body.style.cursor = "grabbing";
+});
+
+addEventListener('mouseup', (e)=>{
+    document.body.style.cursor = "grab";
+});
+
+addEventListener('mousemove', (e)=>{
+    if (e.buttons === 1) {
+        camera.x += e.movementX/zoom;
+        camera.y += e.movementY/zoom;
     }
+});
 
-    //console.log(json);
+var data = {};
+
+async function loadData() {
+    let response = await fetch(`data.json`);
+    let json = await response.json();
+
+    data = json;
+}
+
+loadData();
+
+async function getData(name) {
+    return data[name];
 }
 
 async function createNode(name, x=0, y=0, minDirection=0, maxDirection=Math.PI*2, depth=0, parent, hue=0) {
-    let nodeData = await loadData(name);
-    console.log(name, nodeData);
+    let nodeData = await getData(name);
 
     let children = nodeData? nodeData.connected : [];
 
@@ -41,7 +64,7 @@ async function createNode(name, x=0, y=0, minDirection=0, maxDirection=Math.PI*2
         x: x,
         y: y,
         depth: depth,
-        hue: depth*45,
+        hue: depth*35,
         connected: [],
         parents: parent? [parent]:[]
     };
@@ -65,7 +88,7 @@ async function createNode(name, x=0, y=0, minDirection=0, maxDirection=Math.PI*2
         } else {
             // If not, create a new node
 
-            let direction = minDirection + Math.random()*(maxDirection-minDirection);
+            let direction = minDirection + (i/units) *(maxDirection-minDirection);
 
             let x = node.x + Math.cos(direction)*realDepth;
             let y = node.y + Math.sin(direction)*realDepth;
@@ -84,14 +107,14 @@ function drawNode(node) {
     for (node2 of node.connected) {
 
         context.beginPath();
-        context.moveTo(node.x*zoom, node.y*zoom);
-        context.lineTo(node2.x*zoom, node2.y*zoom);
+        context.moveTo((node.x+camera.x)*zoom, (node.y+camera.y)*zoom);
+        context.lineTo((node2.x+camera.x)*zoom, (node2.y+camera.y)*zoom);
         context.stroke();
 
     }
 
     context.beginPath();
-    context.arc(node.x*zoom, node.y*zoom, zoom, 0, Math.PI*2);
+    context.arc((node.x+camera.x)*zoom, (node.y+camera.y)*zoom, zoom, 0, Math.PI*2);
     context.fill();
     context.stroke();
 
@@ -99,7 +122,7 @@ function drawNode(node) {
     context.fillStyle = `hsl(${node.hue}, 100%, 30%)`;
     context.textAlign = 'center';
     context.textBaseline = 'middle';
-    context.fillText(node.name, node.x*zoom, node.y*zoom);
+    context.fillText(node.name, (node.x+camera.x)*zoom, (node.y+camera.y)*zoom);
 
     for (node2 of node.connected) {
         drawNode(node2);
@@ -144,17 +167,41 @@ function updateDisplay() {
     context.clearRect(-canvas.width/2, -canvas.height/2, canvas.width, canvas.height);
     context.lineWidth = zoom/10;
 
-    updateNode(nodes[0]);
-    drawNode(nodes[0]);
+    if (nodes.length > 0) {
+        updateNode(nodes[0]);
+        drawNode(nodes[0]);
 
-    nodes[0].x = 0;
-    nodes[0].y = 0;
+        nodes[0].x = 0;
+        nodes[0].y = 0;
+    } else {
+        context.font = `64px Arial`;
+        context.fillStyle = '#6666';
+        context.textAlign = 'center';
+        context.textBaseline = 'middle';
+        context.fillText('Connect Nodes', 0, 0);
+    }
 }
 
-const nodes = [];
+const searchInput = document.querySelector('#search');
 
-createNode("kaguya-sama", 0, 0);
+searchInput.addEventListener('change', (e)=>{
+    let search = searchInput.value;
+
+    let results = Object.keys(data).find(key => key == search);
+
+    console.log(results);
+
+    // Remove current nodes and add first result from search
+    nodes = [];
+    if (results) {
+        createNode(results);
+    }
+});
+
+var nodes = [];
+
+//createNode("umaru-chan", 0, 0);
 
 setInterval(()=>{
     updateDisplay();
-}, 20);
+}, 10);

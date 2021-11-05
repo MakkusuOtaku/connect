@@ -5,6 +5,12 @@
             "naruto"
         ]
     },
+    "chaos child": {
+        "name": "Chaos;Child",
+        "connected": [
+            "chaos head"
+        ]
+    },
     "chuunibyo demo koi ga shitai": {
         "name": "Chuunibyo Demo Koi Ga Shitai",
         "connected": [
@@ -47,6 +53,13 @@
         "name": "Kaguya-Sama: Love is war!",
         "connected": [
             "umaru-chan"
+        ]
+    },
+    "kill la kill": {
+        "name": "Kill La Kill",
+        "connected": [
+            "pulp fiction",
+            "terminator"
         ]
     },
     "lucky star": {
@@ -100,6 +113,19 @@
         "name": "Tantei Wa Mou, Shindeiru",
         "connected": [
             "hololive"
+        ]
+    },
+    "teen titans go": {
+        "name": "Teen Titans Go!",
+        "connected": [
+            "tmnt",
+            "teen titans"
+        ]
+    },
+    "tmnt": {
+        "name": "Teenage Mutant Ninja Turtles",
+        "connected": [
+            "power rangers"
         ]
     },
     "umaru-chan": {
