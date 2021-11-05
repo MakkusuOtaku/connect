@@ -18,6 +18,14 @@
             "melancholy of haruhi suzumiya"
         ]
     },
+    "family guy": {
+        "name": "Family Guy",
+        "connected": [
+            "american dad",
+            "cleveland show",
+            "rick and morty"
+        ]
+    },
     "full metal panic": {
         "name": "Full Metal Panic",
         "connected": [
@@ -88,6 +96,12 @@
             "shuffle"
         ]
     },
+    "my little pony": {
+        "name": "My Little Pony",
+        "connected": [
+            "rick and morty"
+        ]
+    },
     "no game no life": {
         "name": "No Game No Life",
         "connected": [
@@ -106,6 +120,14 @@
         "connected": [
             "konosuba",
             "tantei wa mou shindeiru"
+        ]
+    },
+    "rick and morty": {
+        "name": "Rick and Morty",
+        "connected": [
+            "garfield",
+            "gravity falls",
+            "minecraft"
         ]
     },
     "scooby doo": {
@@ -128,7 +150,14 @@
         "connected": [
             "family guy",
             "futurama",
+            "rick and morty",
             "x-files"
+        ]
+    },
+    "space jam": {
+        "name": "Space Jam",
+        "connected": [
+            "rick and morty"
         ]
     },
     "steins gate": {

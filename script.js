@@ -20,8 +20,6 @@ const camera = {
     y: 0,
 };
 
-// Drag camera by clicking and dragging
-
 document.body.style.cursor = "grab";
 
 addEventListener('mousedown', (e)=>{
@@ -78,7 +76,11 @@ async function createNode(name, x=0, y=0, minDirection=0, maxDirection=Math.PI*2
 
     for (i in children) {
         // Check if there is already a node with this name
-        let node2 = nodes.find(node => node.name == children[i]);
+        let name = children[i];
+
+        let node2 = nodes.find(node =>{
+            return node.name == name;
+        });
 
         // If there is, connect to it
 
