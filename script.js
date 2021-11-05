@@ -179,12 +179,6 @@ function updateDisplay() {
 
         nodes[0].x = 0;
         nodes[0].y = 0;
-    } else {
-        /*context.font = `64px Arial`;
-        context.fillStyle = '#6666';
-        context.textAlign = 'center';
-        context.textBaseline = 'middle';
-        context.fillText('Connect Nodes', 0, 0);*/
     }
 }
 

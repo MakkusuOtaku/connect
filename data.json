@@ -49,6 +49,16 @@
             "tanya the evil"
         ]
     },
+    "justic league": {
+        "name": "Justic League",
+        "connected": [
+            "aquaman",
+            "batman",
+            "flash",
+            "superman",
+            "wonder woman"
+        ]
+    },
     "kaguya-sama": {
         "name": "Kaguya-Sama: Love is war!",
         "connected": [
@@ -98,6 +108,21 @@
             "tantei wa mou shindeiru"
         ]
     },
+    "scooby doo": {
+        "name": "Scooby Doo",
+        "connected": [
+            "addams family",
+            "aquaman",
+            "batman",
+            "flash",
+            "flintstones",
+            "jetsons",
+            "johnny bravo",
+            "shazam",
+            "superman",
+            "yogi bear"
+        ]
+    },
     "steins gate": {
         "name": "Steins;Gate",
         "connected": [
@@ -118,13 +143,19 @@
     "teen titans go": {
         "name": "Teen Titans Go!",
         "connected": [
+            "justic league",
+            "scooby doo",
             "tmnt",
-            "teen titans"
+            "teen titans",
+            "young justic"
         ]
     },
     "tmnt": {
         "name": "Teenage Mutant Ninja Turtles",
         "connected": [
+            "batman",
+            "garfield",
+            "ghostbusters",
             "power rangers"
         ]
     },
