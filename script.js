@@ -167,6 +167,12 @@ function updateDisplay() {
     context.clearRect(-canvas.width/2, -canvas.height/2, canvas.width, canvas.height);
     context.lineWidth = zoom/10;
 
+    context.font = `64px Arial`;
+    context.fillStyle = '#6666';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.fillText('Connect Nodes', 0, 0);
+
     if (nodes.length > 0) {
         updateNode(nodes[0]);
         drawNode(nodes[0]);
@@ -174,11 +180,11 @@ function updateDisplay() {
         nodes[0].x = 0;
         nodes[0].y = 0;
     } else {
-        context.font = `64px Arial`;
+        /*context.font = `64px Arial`;
         context.fillStyle = '#6666';
         context.textAlign = 'center';
         context.textBaseline = 'middle';
-        context.fillText('Connect Nodes', 0, 0);
+        context.fillText('Connect Nodes', 0, 0);*/
     }
 }
 
