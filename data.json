@@ -49,7 +49,7 @@
             "tanya the evil"
         ]
     },
-    "justic league": {
+    "justice league": {
         "name": "Justic League",
         "connected": [
             "aquaman",
@@ -123,6 +123,14 @@
             "yogi bear"
         ]
     },
+    "simpsons": {
+        "name": "The Simpsons",
+        "connected": [
+            "family guy",
+            "futurama",
+            "x-files"
+        ]
+    },
     "steins gate": {
         "name": "Steins;Gate",
         "connected": [
@@ -143,11 +151,11 @@
     "teen titans go": {
         "name": "Teen Titans Go!",
         "connected": [
-            "justic league",
+            "justice league",
             "scooby doo",
             "tmnt",
             "teen titans",
-            "young justic"
+            "young justice"
         ]
     },
     "tmnt": {
