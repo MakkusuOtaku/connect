@@ -62,7 +62,7 @@ async function createNode(name, x=0, y=0, minDirection=0, maxDirection=Math.PI*2
         x: x,
         y: y,
         depth: depth,
-        hue: depth*35,
+        hue: 360-(depth*45),
         connected: [],
         parents: parent? [parent]:[]
     };

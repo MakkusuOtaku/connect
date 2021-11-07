@@ -80,6 +80,12 @@
             "terminator"
         ]
     },
+    "looney tunes": {
+        "name": "Looney Tunes",
+        "connected": [
+            "rick and morty"
+        ]
+    },
     "lucky star": {
         "name": "Lucky Star",
         "connected": [
@@ -154,12 +160,6 @@
             "x-files"
         ]
     },
-    "space jam": {
-        "name": "Space Jam",
-        "connected": [
-            "rick and morty"
-        ]
-    },
     "steins gate": {
         "name": "Steins;Gate",
         "connected": [
@@ -181,6 +181,7 @@
         "name": "Teen Titans Go!",
         "connected": [
             "justice league",
+            "looney tunes",
             "scooby doo",
             "tmnt",
             "teen titans",
