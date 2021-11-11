@@ -1,4 +1,4 @@
 hellooo
 
 Example image:
-![](assets/preview.png)
+![](https://raw.githubusercontent.com/MakkusuOtaku/connect/master/assets/preview.png)
