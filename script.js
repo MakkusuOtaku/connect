@@ -52,6 +52,16 @@ async function getData(name) {
     return data[name];
 }
 
+function bounceInterpolate(start, end, t) {
+    t = t*Math.PI;
+
+    let difference = end - start;
+
+    let b = Math.sin(t) * (Math.exp(difference*0.2)-1)+1;
+
+    return start + difference * b;
+}
+
 async function createNode(name, x=0, y=0, minDirection=0, maxDirection=Math.PI*2, depth=0, parent, hue=0) {
     let nodeData = await getData(name);
 
@@ -64,7 +74,8 @@ async function createNode(name, x=0, y=0, minDirection=0, maxDirection=Math.PI*2
         depth: depth,
         hue: 360-(depth*45),
         connected: [],
-        parents: parent? [parent]:[]
+        parents: parent? [parent]:[],
+        date: new Date(),
     };
 
     nodes.push(node);
@@ -115,8 +126,13 @@ function drawNode(node) {
 
     }
 
+    let age = (new Date() - node.date)/200;
+    age = Math.min(age, 1);
+
+    let radius = bounceInterpolate(0, 1, age);
+
     context.beginPath();
-    context.arc((node.x+camera.x)*zoom, (node.y+camera.y)*zoom, zoom, 0, Math.PI*2);
+    context.arc((node.x+camera.x)*zoom, (node.y+camera.y)*zoom, zoom*radius, 0, Math.PI*2);
     context.fill();
     context.stroke();
 
@@ -201,9 +217,22 @@ searchInput.addEventListener('change', (e)=>{
 });
 
 var nodes = [];
+var openList = [];
+var closedList = [];
 
 //createNode("umaru-chan", 0, 0);
 
 setInterval(()=>{
     updateDisplay();
 }, 10);
+
+setInterval(()=>{
+    if (!openList.length) return;
+
+    let nodeName = openList.shift();
+
+    if (!closedList.includes(nodeName)) {
+        closedList.push(nodeName);
+        createNode(nodeName);
+    }
+}, 500);
