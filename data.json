@@ -32,6 +32,12 @@
             "death note"
         ]
     },
+    "garfield": {
+        "name": "Garfield",
+        "connected": [
+            "simpsons"
+        ]
+    },
     "gintama": {
         "name": "Gintama",
         "connected": [
@@ -78,6 +84,15 @@
         "connected": [
             "pulp fiction",
             "terminator"
+        ]
+    },
+    "lego movie": {
+        "name": "LEGO Movie",
+        "connected": [
+            "batman",
+            "green lantern",
+            "harry potter",
+            "superman"
         ]
     },
     "looney tunes": {
